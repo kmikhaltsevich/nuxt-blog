@@ -5,12 +5,12 @@
     flat
     rounded
   >
-    <v-btn nuxt to='/' text class='font-weight-bold mr-8' rounded color='success'>{{ title }}</v-btn>
+    <v-btn nuxt to='/' text class='font-weight-bold mr-8' rounded>{{ title }}</v-btn>
     <v-btn
       v-for="(item, i) in items"
       :key="i"
       :to="item.to"
-      nuxt router exact rounded depressed active-class='success'
+      nuxt router exact rounded depressed active-class='info'
     > {{ item.title }}
     </v-btn>
   </v-app-bar>

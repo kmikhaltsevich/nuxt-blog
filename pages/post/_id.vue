@@ -2,14 +2,14 @@
   div.post
     .d-flex.justify-space-between.align-center
       .text-h5.font-weight-bold POST TITLE
-      v-btn(depressed rounded color='success' nuxt to='/')
+      v-btn(rounded depressed nuxt to='/' color='info')
         v-icon.mr-2 mdi-arrow-left
         | Назад
     v-divider.my-4
     .d-flex.justify-space-between.align-center.mb-4
       .font-weight-bold 20.02.2020
       .d-flex.align-center
-        v-icon.mr-2(color='success') mdi-eye
+        v-icon.mr-2 mdi-eye
         | 560
     v-card.mb-8(outlined tile)
       v-row.pa-4

@@ -11,16 +11,16 @@
         :rules='[rules.required]'
         required
         label='Ваше имя'
-        color='success' rounded full-width filled clearable
+        rounded full-width filled clearable
       )
       v-textarea(
         v-model='comment'
         :rules='[rules.required]'
         required
         label='Текст комментария'
-        color='success' rounded full-width filled clearable
+        rounded full-width filled clearable
       )
-      v-btn(@click='submitComment' color='success' depressed rounded block large :loading='loading') Отправить
+      v-btn(@click='submitComment' depressed rounded block large :loading='loading' color='info') Отправить
 </template>
 
 <script>

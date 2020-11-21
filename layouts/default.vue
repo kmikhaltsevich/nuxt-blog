@@ -5,7 +5,7 @@
       v-container
         nuxt
     main-footer
-    v-snackbar(:value='getSnackBar.active' @input='closeSnackBar()' shaped timeout='6000' top multi-line color='success' ) {{ getSnackBar.text }}
+    v-snackbar(:value='getSnackBar.active' @input='closeSnackBar()' shaped timeout='6000' top multi-line) {{ getSnackBar.text }}
       template(v-slot:action="{ attrs }")
         v-btn.mx-2(
           @click='closeSnackBar'
@@ -32,9 +32,6 @@ const snackBar = namespace('snackBar')
   }
 })
 export default class Default extends Base {
-  qqq (q) {
-    console.log(q)
-  }
   @snackBar.Getter getSnackBar
   @snackBar.Mutation closeSnackBar
 
