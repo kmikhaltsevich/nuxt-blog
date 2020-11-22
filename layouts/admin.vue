@@ -6,7 +6,9 @@
           v-col.pa-0(cols='12' md='3')
             side-bar
           v-col.pa-0(cols='12' md='9')
+            v-breadcrumbs(:items='items' divider='-')
             nuxt
+      snack-bar
 </template>
 
 <script>
@@ -16,9 +18,27 @@ import { Component } from 'vue-property-decorator'
 import SideBar from '@/components/admin/SideBar'
 
 @Component({
+  middleware: ['adminAuth'],
   components: { SideBar }
 })
 export default class AdminLayout extends Base {
+  items = [
+    {
+      text: 'Главная',
+      disabled: false,
+      to: '/'
+    },
+    {
+      text: 'О нас',
+      disabled: false,
+      to: '/inspire'
+    },
+    {
+      text: 'Администрирование',
+      disabled: false,
+      to: '/admin'
+    }
+  ]
 }
 </script>
 

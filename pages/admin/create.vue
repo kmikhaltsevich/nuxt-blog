@@ -5,6 +5,7 @@
 <script>
 import BasePage from '@/modules/BasePage'
 import { Component } from 'vue-property-decorator'
+import adminAuth from '@/middleware/adminAuth'
 
 @Component({
   layout: 'admin'

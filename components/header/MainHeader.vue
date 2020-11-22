@@ -2,7 +2,7 @@
   <v-app-bar
     fixed
     app
-    flat
+    elevation='3'
     rounded
   >
     <v-btn nuxt to='/' text class='font-weight-bold mr-8' rounded>{{ title }}</v-btn>
@@ -10,7 +10,7 @@
       v-for="(item, i) in items"
       :key="i"
       :to="item.to"
-      nuxt router exact rounded depressed active-class='info'
+      nuxt router rounded depressed active-class='info'
     > {{ item.title }}
     </v-btn>
   </v-app-bar>
@@ -29,6 +29,10 @@ export default {
         {
           title: 'О нас',
           to: '/inspire'
+        },
+        {
+          title: 'Администрирование',
+          to: '/admin'
         }
       ],
       title: 'NUXT BLOG'

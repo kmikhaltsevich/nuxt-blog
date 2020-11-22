@@ -14,11 +14,19 @@
             v-icon(size='24') {{ item.icon }}
           v-list-item-content
             v-list-item-title {{ item.text }}
+        v-list-item(@click='$router.push("/admin/login"); onLogout')
+          v-list-item-icon
+            v-icon(size='24') mdi-exit-to-app
+          v-list-item-content
+            v-list-item-title Выход
 </template>
 
 <script>
 import BaseComponent from '@/modules/BaseComponent'
 import { Component } from 'vue-property-decorator'
+import { namespace } from 'vuex-class'
+
+const auth = namespace('auth')
 
 @Component
 export default class AdminSideBar extends BaseComponent {
@@ -27,9 +35,10 @@ export default class AdminSideBar extends BaseComponent {
     { text: 'Аналитика', icon: 'mdi-chart-pie', slug: '/admin' },
     { text: 'Создать', icon: 'mdi-plus-circle-outline', slug: '/admin/create' },
     { text: 'Посты', icon: 'mdi-newspaper', slug: '/admin/list' },
-    { text: 'Пользователи', icon: 'mdi-account-multiple', slug: '/admin/user' },
-    { text: 'Выход', icon: 'mdi-exit-to-app', slug: '/admin/logout' }
+    { text: 'Пользователи', icon: 'mdi-account-multiple', slug: '/admin/user' }
   ]
+
+  @auth.Action onLogout
 }
 </script>
 
