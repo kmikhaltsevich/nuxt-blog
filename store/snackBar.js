@@ -28,7 +28,7 @@ export const actions = {
   async openNotification ({ state, commit }, data) {
     if (state.snackBar.active) {
       await commit('closeSnackBar')
-      return setTimeout(() => { commit('openSnackBar', data) }, 400)
+      return setTimeout(() => { commit('openSnackBar', data) }, 150)
     }
     commit('openSnackBar', data)
   }

@@ -15,7 +15,7 @@ export default {
     ]
   },
 
-  loading: { color: 'green' },
+  loading: { color: '#008aff' },
 
   css: [ '~/assets/main.sass' ],
 

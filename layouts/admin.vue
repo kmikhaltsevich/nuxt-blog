@@ -6,8 +6,8 @@
           v-col.pa-0(cols='12' md='3')
             side-bar
           v-col.pa-0(cols='12' md='9')
-            v-breadcrumbs(:items='items' divider='-')
-            nuxt
+            v-breadcrumbs(:items='items' divider='|')
+            nuxt.px-4
       snack-bar
 </template>
 

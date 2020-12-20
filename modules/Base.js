@@ -1,5 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator'
+import { namespace } from 'vuex-class'
 
+const snackBar = namespace('snackBar')
 @Component
 export default class Base extends Vue {
   rules = {
@@ -10,4 +12,6 @@ export default class Base extends Vue {
       return pattern.test(value) || 'Invalid e-mail.'
     }
   }
+
+  @snackBar.Action openNotification
 }

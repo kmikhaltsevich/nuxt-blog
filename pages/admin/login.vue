@@ -34,7 +34,6 @@ import { Component } from 'vue-property-decorator'
 import { namespace } from 'vuex-class'
 
 const auth = namespace('auth')
-const snackBar = namespace('snackBar')
 
 @Component({
   layout: 'empty'
@@ -47,11 +46,10 @@ export default class LoginAdminPanel extends BasePage {
   password = ''
 
   @auth.Action onLogin
-  @snackBar.Action openNotification
 
   async submitLogin () {
     await this.$refs.form.validate()
-    if ( !this.valid) return console.error('Заполните форму')
+    if ( !this.valid) return this.openNotification({ active: true, text: 'Заполните форму' })
 
     this.loading = true
     try {

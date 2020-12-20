@@ -28,8 +28,6 @@ import BaseComponent from '@/modules/BaseComponent'
 import { Component } from 'vue-property-decorator'
 import { namespace } from 'vuex-class'
 
-const snackBar = namespace('snackBar')
-
 @Component
 export default class CommentForm extends BaseComponent {
   valid = null
@@ -38,8 +36,6 @@ export default class CommentForm extends BaseComponent {
 
   name = ''
   comment = ''
-
-  @snackBar.Action openNotification
 
   async submitComment () {
     await this.$refs.form.validate()
